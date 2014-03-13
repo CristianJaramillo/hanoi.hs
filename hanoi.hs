@@ -11,3 +11,50 @@ hanoi n a b c = hanoi (n-1) a c b ++ [(a,b)] ++ hanoi (n-1) c b a
 -- Ejemplo:
 -- *Main> hanoi 3 '1' '3' '2'
 -- [('1','3'),('1','2'),('3','2'),('1','3'),('2','1'),('2','3'),('1','3')]
+
+
+potencia :: Integer -> Integer -> Integer
+potencia m 0 = 1
+potencia m n = m * (potencia m (n-1))
+
+--potencia 2 3 = 2 * (potencia 2 (3-1))
+--potencia 2 2 = 2 * (potencia 2 (2-1))
+--potencia 2 1 = 2 * (potencia 2 (1-1))
+--Resultado final
+--potencia 2 3 = 2 * (2 * (2 * (1)))
+
+potencia2 m n = m*m*(n-1)
+
+-- Serio de fibonaci
+fibo:: Int -> Int
+fibo 0 = 1
+fibo 1 = 1
+fibo x = (fibo(x-1))+(fibo(x-2))
+
+-- Quicksort
+
+-- Funcion de Gera 
+porr :: Int -> Int -> Int
+porr m 0 = 0
+porr m n = m + (porr m (n-1))
+
+-- Martha 
+desde::Int->[Int]
+desde n = n: desde (n+1)
+
+-- Cortez
+--busSec :: Ord a => [a] -> a->Bool
+--busSec []_ = False
+--busSec (x:xs) ele 
+-- | x==ele=True
+-- |True =busSec ele
+
+-- Soria 
+replicate' ::(Num i, Ord i) => i -> a -> [a]
+replicate' n x | n <=0= [] | otherwise = x: replicate' (n-1)x
+
+-- Bofo
+MAXIMUM' ::(Ord a)=>[a]->a
+MAXIMUM' []=error "Maximum of emptx list"
+MAXIMUM' [x]=x
+MAXIMUM' (x;xs)= x `Max` (MAXIMUM' xs)
