@@ -32,6 +32,12 @@ fibo 1 = 1
 fibo x = (fibo(x-1))+(fibo(x-2))
 
 -- Quicksort
+quicksort :: (Ord a) => [a] -> [a]
+quicksort [] = []
+quicksort (x:xs) =
+    let smallerSorted = quicksort [a | a <- xs, a <= x]
+        biggerSorted  = quicksort [a | a <- xs, a > x]
+    in  smallerSorted ++ [x] ++ biggerSorted
 
 -- Funcion de Gera 
 porr :: Int -> Int -> Int
